@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.iluy.imutest'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.iluy.imutest"
+        // minSdk 26 matches the watch's Android 8.1 (API 27) — Foreground
+        // Service + NotificationChannel APIs both require 26+.
+        minSdk 26
+        // targetSdk kept close to the device's real OS (28) on purpose:
+        // avoids scoped-storage / background-service restrictions that
+        // Android 29+ introduces, which would complicate this simple test.
+        targetSdk 28
+        versionCode 2
+        versionName "1.0-v1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}

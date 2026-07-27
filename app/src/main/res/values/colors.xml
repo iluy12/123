@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- פלטת אמרלד — לפי הנחיות הפרויקט. אין זהב בשום מקום. -->
+    <color name="emerald_primary">#0A7D5A</color>
+    <color name="emerald_primary_hover">#0C6A4E</color>
+    <color name="emerald_accent">#10B981</color>
+    <color name="emerald_soft">#9BE3C8</color>
+    <color name="emerald_darkest">#16201C</color>
+    <color name="emerald_darkest2">#0A0F0D</color>
+    <color name="pastel_light">#EDF8F3</color>
+    <color name="pastel_light2">#CDEEE0</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="bg_grey">#F5F5F7</color>
+    <color name="border_grey">#E4E4E7</color>
+    <color name="text_primary">#1D1D1F</color>
+    <color name="text_secondary">#48484A</color>
+    <color name="text_tertiary">#86868B</color>
+    <color name="danger">#B3261E</color>
+</resources>

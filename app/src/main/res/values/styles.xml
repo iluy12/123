@@ -1,0 +1,47 @@
+<resources>
+    <!--
+      פונט: הנחיות הפרויקט דורשות Assistant בכל תוצר. לא ניתן היה להוריד את
+      קובצי הפונט (fonts.google.com) מהסביבה שבה קוד זה נכתב — אין גישת
+      רשת לדומיין הזה. כברירת מחדל זמנית האפליקציה משתמשת ב-sans-serif של
+      המערכת. כדי להתקין את Assistant בפועל:
+        1. הורד TTF/OTF מ-https://fonts.google.com/specimen/Assistant
+        2. שים בקובץ: app/src/main/res/font/assistant_regular.ttf (וכן bold)
+        3. הוסף font family xml (res/font/assistant.xml) שמצביע עליהם
+        4. שנה כאן את fontFamily מ-"sans-serif" ל-"@font/assistant"
+      כל שאר הקוד כבר מפנה למקום אחד מרכזי הזה — שינוי יחיד מספיק לכל
+      האפליקציה.
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="colorPrimary">@color/emerald_primary</item>
+        <item name="colorPrimaryDark">@color/emerald_primary_hover</item>
+        <item name="colorAccent">@color/emerald_accent</item>
+        <item name="android:windowBackground">@color/bg_white</item>
+    </style>
+
+    <style name="IluyButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@color/emerald_primary</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+
+    <style name="IluyButtonSecondary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@color/pastel_light2</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+    </style>
+</resources>

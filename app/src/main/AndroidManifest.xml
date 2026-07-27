@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- שירות רקע (זיהוי הקשה) שרץ גם כשהמסך כבוי -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <!-- הפעלה מחדש אחרי ריסטרט לשעון -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- שאלה 9 בשאלון: הקלטה אישית -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- RISK B: חיוג ישיר לקו-הבדיקה -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- worn-gating (מתעלמים מדפיקות כשהשעון לא על היד) — נפילה-חזרה
+         לחיישן דופק אם אין off-body sensor ייעודי -->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <!-- התראת "עילוי שלחו לך סרטון" -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".QuestionnaireActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".RiskFlowActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+
+        <activity
+            android:name=".HelpMenuActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".PlaceholderActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".VideoPlaceholderActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+
+        <activity
+            android:name=".MoodPickerActivity"
+            android:exported="false"
+            android:label="@string/app_name" />
+
+        <service
+            android:name=".TapDetectorService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <receiver
+            android:name=".BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
